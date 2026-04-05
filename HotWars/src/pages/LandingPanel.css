@@ -1,0 +1,69 @@
+/* src/components/LandingPanel.css */
+.landing-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  width: 100vw;
+  background: radial-gradient(circle at center, #1a0b0b 0%, #0a0a0a 100%);
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+
+.landing-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 15% 50%, rgba(255, 69, 0, 0.05), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(255, 140, 0, 0.05), transparent 25%);
+  pointer-events: none;
+}
+
+.landing-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 4rem;
+  z-index: 10;
+}
+
+.game-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  color: #fff;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(255, 69, 0, 0.5), 0 0 20px rgba(255, 69, 0, 0.3);
+  margin: 0;
+  animation: textGlow 3s ease-in-out infinite alternate;
+}
+
+.icon {
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
+  transition: transform 0.3s ease;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+.logo-icon {
+  width: 70px;
+  height: 70px;
+}
+
+.landing-main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
