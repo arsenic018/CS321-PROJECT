@@ -1,26 +1,39 @@
 import { useState } from 'react'
-import LandingPanel from './pages/LandingPanel'
+import { BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  useNavigate
+ } from "react-router-dom"
 
+ //make sure to import any new pages here
+import LandingPanel from "./pages/LandingPanel"
+import Page2 from "./pages/Page2"
+
+//And add a route for any pages that you're adding. Path is what shows up in the URL,
+//while element is the actual element you want to display
 function App() {
-  const [hasStarted, setHasStarted] = useState(false)
-
-  const handleContinue = () => {
-    setHasStarted(true);
-    console.log("Play/Create/Load Set Options (TO implement by someone else)");
-  };
-
   return (
-    <>
-      {!hasStarted ? (
-        <LandingPanel onContinue={handleContinue} />
-      ) : (
-        <div style={{ color: 'white', padding: '2rem', fontFamily: 'Inter', background: '#0a0a0a', width: '100vw', height: '100vh' }}>
-          <h2>Storyboard Panel 2: Mode Selection</h2>
-          <p>Play/Create/Load Set Options (TO implement by someone else)</p>
-        </div>
-      )}
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingZone />} />
+        <Route path = "/Page2" element={<Page2 />} />
+      </Routes>
+    </Router>
   )
 }
+
+
+//This function handles the logic for the initial transition, if you're adding
+//transitions feel free to define more functions
+function LandingZone() {
+  const navigate = useNavigate()
+
+  const leaveLanding = () => {
+    navigate("/Page2")
+  }
+
+  return <LandingPanel onContinue={leaveLanding} />
+} 
 
 export default App
