@@ -20,7 +20,7 @@ function App() {
         <Route path = "/HomePage" element={<Pages.HomePage />} />
         <Route path = "/Play" element = {<Pages.Play />} />
         <Route path = "/LoadSet" element = {<Pages.LoadSet />} />
-        <Route path = "/LoadSet" element = {<Pages.CreateSet />} />
+        <Route path = "/CreateSet" element = {<Pages.CreateSet />} />
       </Routes>
     </Router>
   )
@@ -38,5 +38,6 @@ function LandingZone() {
 
   return <Pages.LandingPanel onContinue={leaveLanding} />
 } 
+
 
 export default App

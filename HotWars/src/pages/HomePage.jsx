@@ -1,5 +1,14 @@
 import React from "react"
 import './HomePage.css';
+import './Play.jsx';
+import './CreateSet.jsx';
+import { BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  useNavigate
+ } from "react-router-dom"
+
 const HomePage = () => {
     return(
         <div className="startPanel">
@@ -14,21 +23,24 @@ const HomePage = () => {
     )
 }
 function PlayButton(){
+    const nami = useNavigate();
     return (
         <div className="left-middle-button">
-        <button className="button-title">Play</button>
+        <button className="button-title" onClick={()=>nami("/Play")}>Play</button>
         </div>
     )
 }
 function CreateButton(){
+    const nami = useNavigate();
     return (<div className="right-top-button">
-        <button className="button-title">Create A Set</button>
+        <button className="button-title"onClick={()=>nami("/CreateSet")}>Create A Set</button>
         </div>
     )
 }
 function LoadButton(){
+    const nami = useNavigate();
     return (<div className="right-bottom-button">
-        <button className="button-title">Load A Set</button>
+        <button className="button-title"onClick={()=>nami("/LoadSet")}>Load A Set</button>
         </div>
     )
 }
