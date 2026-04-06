@@ -31,15 +31,17 @@
   margin: 0;
   animation: textGlow 3s ease-in-out infinite alternate;
 }
-.button-title{
+
+.button-titlee{
   font-family: 'Orbitron', sans-serif;
   background: transparent;
   color: #23081a;
   font-size: 6rem;
   font-weight: 900;
   letter-spacing: 0.1em;
+  cursor: pointer;
 }
-.left-middle-button {
+.left-middle-buttonn {
   position: absolute;       
   top: 55%;              
   left: 30px;
@@ -47,9 +49,8 @@
   padding: 300px 150px;    
   background: linear-gradient(100deg, #2639d0, #84afe1);
   border-radius: 100px;
-  cursor: pointer;
 }
-.right-top-button {
+.right-top-buttonn {
   position: absolute;       
   top: 35%;              
   right: 30px;
@@ -57,9 +58,8 @@
   padding: 100px 100px;    
   background: linear-gradient(100deg, #2639d0, #84afe1);
   border-radius: 100px;
-  cursor: pointer;
 }
-.right-bottom-button {
+.right-bottom-buttonn {
   position: absolute;       
   top: 75%;              
   right: 30px;
@@ -67,5 +67,4 @@
   padding: 100px 160px;    
   background: linear-gradient(100deg, #2639d0, #84afe1);
   border-radius: 100px;
-  cursor: pointer;
 }

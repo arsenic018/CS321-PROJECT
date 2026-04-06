@@ -11,7 +11,7 @@ import { BrowserRouter as Router,
 
 const HomePage = () => {
     return(
-        <div className="startPanel">
+        <div className="startPanell">
             <header className="startHeader">
                 <h1 className="gameTitle">HOT WARS!</h1>
             </header>
@@ -25,22 +25,22 @@ const HomePage = () => {
 function PlayButton(){
     const nami = useNavigate();
     return (
-        <div className="left-middle-button">
-        <button className="button-title" onClick={()=>nami("/Play")}>Play</button>
+        <div className="left-middle-buttonn">
+        <button className="button-titlee" onClick={()=>nami("/Play")}>Play</button>
         </div>
     )
 }
 function CreateButton(){
     const nami = useNavigate();
-    return (<div className="right-top-button">
-        <button className="button-title"onClick={()=>nami("/CreateSet")}>Create A Set</button>
+    return (<div className="right-top-buttonn">
+        <button className="button-titlee"onClick={()=>nami("/CreateSet")}>Create A Set</button>
         </div>
     )
 }
 function LoadButton(){
     const nami = useNavigate();
-    return (<div className="right-bottom-button">
-        <button className="button-title"onClick={()=>nami("/LoadSet")}>Load A Set</button>
+    return (<div className="right-bottom-buttonn">
+        <button className="button-titlee"onClick={()=>nami("/LoadSet")}>Load A Set</button>
         </div>
     )
 }
