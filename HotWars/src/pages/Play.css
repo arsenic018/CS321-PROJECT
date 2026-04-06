@@ -1,0 +1,71 @@
+.startPanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  width: 100vw;
+ background: radial-gradient(circle at center, #1a0b0b 0%, #0a0a0a 100%);
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+
+.startHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 4rem;
+  z-index:
+   10;
+}
+.gameTitle {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  color: #fff;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(76, 0, 255, 0.5), 0 0 20px rgba(255, 7, 106, 0.677);
+  margin: 0;
+  animation: textGlow 3s ease-in-out infinite alternate;
+}
+.button-title{
+  font-family: 'Orbitron', sans-serif;
+  background: transparent;
+  color: #23081a;
+  font-size: 6rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+.left-middle-button {
+  position: absolute;       
+  top: 55%;              
+  left: 30px;
+  transform: translateY(-50%); 
+  padding: 300px 150px;    
+  background: linear-gradient(100deg, #2639d0, #84afe1);
+  border-radius: 100px;
+  cursor: pointer;
+}
+.right-top-button {
+  position: absolute;       
+  top: 35%;              
+  right: 30px;
+  transform: translateY(-50%); 
+  padding: 100px 100px;    
+  background: linear-gradient(100deg, #2639d0, #84afe1);
+  border-radius: 100px;
+  cursor: pointer;
+}
+.right-bottom-button {
+  position: absolute;       
+  top: 75%;              
+  right: 30px;
+  transform: translateY(-50%); 
+  padding: 100px 160px;    
+  background: linear-gradient(100deg, #2639d0, #84afe1);
+  border-radius: 100px;
+  cursor: pointer;
+}

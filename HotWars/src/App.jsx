@@ -6,9 +6,9 @@ import { BrowserRouter as Router,
   useNavigate
  } from "react-router-dom"
 
- //make sure to import any new pages here
-import LandingPanel from "./pages/LandingPanel"
-import Page2 from "./pages/Page2"
+//imports all da pages
+import * as Pages from "./pages"
+
 
 //And add a route for any pages that you're adding. Path is what shows up in the URL,
 //while element is the actual element you want to display
@@ -17,7 +17,10 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<LandingZone />} />
-        <Route path = "/Page2" element={<Page2 />} />
+        <Route path = "/HomePage" element={<Pages.HomePage />} />
+        <Route path = "/Play" element = {<Pages.Play />} />
+        <Route path = "/LoadSet" element = {<Pages.LoadSet />} />
+        <Route path = "/LoadSet" element = {<Pages.CreateSet />} />
       </Routes>
     </Router>
   )
@@ -30,10 +33,10 @@ function LandingZone() {
   const navigate = useNavigate()
 
   const leaveLanding = () => {
-    navigate("/Page2")
+    navigate("/HomePage")
   }
 
-  return <LandingPanel onContinue={leaveLanding} />
+  return <Pages.LandingPanel onContinue={leaveLanding} />
 } 
 
 export default App

@@ -1,6 +1,6 @@
 import React from "react"
-import './Page2.css';
-const page2 = () => {
+import './CreateSet.css';
+const CreateSet = () => {
     return(
         <div className="startPanel">
             <header className="startHeader">
@@ -33,4 +33,4 @@ function LoadButton(){
     )
 }
 
-export default page2
+export default CreateSet
