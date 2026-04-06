@@ -69,3 +69,23 @@
   border-radius: 100px;
   cursor: pointer;
 }
+.enter-term-text {
+  position: absolute;
+  top: 25%;
+  left: 30px;
+  transform: translateY(-50%);
+  padding: 100px 160px;
+  background: linear-gradient(100deg, #2639d0, #84afe1);
+  border-radius: 100px;
+  cursor: pointer;
+}
+.enter-definition-text {
+  position: absolute;
+  top: 25%;
+  right: 30px;
+  transform: translateY(-50%);
+  padding: 100px 160px;
+  background: linear-gradient(100deg, #2639d0, #84afe1);
+  border-radius: 100px;
+  cursor: pointer;
+}

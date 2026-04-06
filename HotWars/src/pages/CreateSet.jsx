@@ -7,11 +7,28 @@ const CreateSet = () => {
                 <h1 className="gameTitle">HOT WARS!</h1>
                 <h2 className="PageTitle"> This is the Create Set Screen</h2>
             </header>
+            <Term />
+            <Definition />
             {/* <PlayButton/>
             <CreateButton/>
             <LoadButton/> */}
         </div>
         
+    )
+}
+function Term() {
+    return (
+        <div className="enter-term-text">
+            <input type="text" placeholder="Term"/>
+        </div>
+    );
+}
+
+function Definition() {
+    return (
+        <div className="enter-definition-text">
+            <input type="text" placeholder="Definition"/>
+        </div>
     )
 }
 // function PlayButton(){
