@@ -21,6 +21,7 @@ function App() {
         <Route path = "/Play" element = {<Pages.Play />} />
         <Route path = "/LoadSet" element = {<Pages.LoadSet />} />
         <Route path = "/CreateSet" element = {<Pages.CreateSet />} />
+         <Route path = "/BuiltIn" element = {<Pages.BuiltIn />} />
       </Routes>
     </Router>
   )

@@ -1,25 +1,19 @@
-.startPanell {
-  display: flex;
+.startPanelx {
   flex-direction: column;
-  justify-content: space-between;
   height: 100vh;
   width: 100vw;
   background: radial-gradient(circle at center, #4a2373 0%, #0a0a0a 100%);
-  color: #ffffff;
-  font-family: 'Inter', sans-serif;
-  cursor: pointer;
-  overflow: hidden;
   position: relative;
 }
 
-.startHeader {
+.startHeaderr {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 2rem 4rem;
   z-index: 10;
 }
-.gameTitle {
+.gameTitlee {
   font-family: 'Orbitron', sans-serif;
   font-size: 3rem;
   font-weight: 900;
@@ -35,7 +29,7 @@
   font-family: 'Orbitron', sans-serif;
   background: transparent;
   color: #23081a;
-  font-size: 6rem;
+  font-size: 4rem;
   font-weight: 900;
   letter-spacing: 0.1em;
   cursor: pointer;
@@ -54,7 +48,7 @@
   top: 35%;              
   right: 30px;
   transform: translateY(-50%); 
-  padding: 100px 100px;    
+  padding: 120px 100px;    
   background: linear-gradient(100deg, #2639d0, #84afe1);
   border-radius: 100px;
 }
@@ -63,7 +57,7 @@
   top: 75%;              
   right: 30px;
   transform: translateY(-50%); 
-  padding: 100px 160px;    
+  padding: 120px 140px;    
   background: linear-gradient(100deg, #2639d0, #84afe1);
   border-radius: 100px;
 }
