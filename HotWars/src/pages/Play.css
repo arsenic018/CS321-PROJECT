@@ -1,11 +1,43 @@
 .gameTitle {
+  position: absolute;
+  top: 2%;
+  left: 50%;
+  transform: translateX(-50%);
   font-family: 'Orbitron', sans-serif;
   font-size: 3rem;
   font-weight: 900;
   letter-spacing: 0.1em;
   color: #fff;
   text-transform: uppercase;
-  text-shadow: 0 0 10px rgba(76, 0, 255, 0.5), 0 0 20px rgba(255, 7, 106, 0.677);
   margin: 0;
-  animation: textGlow 3s ease-in-out infinite alternate;
+}
+
+.healthContainer {
+  display: flex;
+  justify-content: left;
+  position: absolute;
+  top: 1%;
+  left: 1%;
+  gap: 1rem;
+}
+
+.heart {
+  width: 5rem;
+  height: 5rem;
+  color: red;
+}
+
+.scoreContainer {
+  position: absolute;
+  top: 1%;
+  right: 1%;
+}
+
+.scoreText {
+  font-size: 1.2rem;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 0.1em;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 0;
 }

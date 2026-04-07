@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { Flame, User } from 'lucide-react';
+import { useEffect } from 'react';
+import { User } from 'lucide-react';
 import './LandingPanel.css';
 import logo from '../assets/logo.png'
 const LandingPanel = ({ onContinue }) => {
@@ -24,7 +24,7 @@ const LandingPanel = ({ onContinue }) => {
             </header>
 
             <main className="landing-main">
-                <p className="pulse-text">Press any button to continue</p>
+                <p>Press any button to continue</p>
             </main>
         </div>
     );
