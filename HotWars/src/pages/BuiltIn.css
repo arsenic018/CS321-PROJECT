@@ -1,56 +1,105 @@
-.startPanelll {
+.builtin-panel {
+  display: flex;
   flex-direction: column;
   height: 100vh;
   width: 100vw;
   background: radial-gradient(circle at center, #4a2373 0%, #0a0a0a 100%);
-  position: relative;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
 }
 
-.builtInTitle{
-  position: absolute;
-  font-family: 'Orbitron', sans-serif;
-  text-transform: uppercase;
-  text-shadow: 0 0 10px rgba(76, 0, 255, 0.5), 0 0 20px rgba(255, 7, 106, 0.677);
-  top: 10px;
-  font-size: 4rem;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
+.builtin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 4rem;
 }
 
-.button-titleee{
+.logo-icon {
+  width: 70px;
+  height: 70px;
+}
+
+.builtin-title {
   font-family: 'Orbitron', sans-serif;
-  background: transparent;
-  color: #23081a;
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 900;
   letter-spacing: 0.1em;
+  color: #fff;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(76, 0, 255, 0.5), 0 0 20px rgba(255, 7, 106, 0.677);
+  margin: 0;
+}
+
+.builtin-subtitle {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(1.2rem, 2.5vw, 2.5rem);
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(76, 0, 255, 0.5), 0 0 20px rgba(255, 7, 106, 0.677);
+  text-align: center;
+  margin: 0;
+}
+
+.icon {
   cursor: pointer;
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
+  transition: transform 0.3s ease;
 }
-.right-middle-buttonn {
-  position: absolute;       
-  top: 55%;              
-  right: 30px;
-  transform: translateY(-50%); 
-  padding: 300px 300px;    
-  background: linear-gradient(100deg, #2639d0, #84afe1);
-  border-radius: 100px;
+
+.icon:hover {
+  transform: scale(1.1);
 }
-.left-top-buttonn {
-  position: absolute;       
-  top: 35%;              
-  left: 30px;
-  transform: translateY(-50%); 
-  padding: 120px 127px;    
-  background: linear-gradient(100deg, #2639d0, #84afe1);
-  border-radius: 100px;
+
+.builtin-main {
+  display: flex;
+  flex: 1;
+  gap: 2rem;
+  padding: 2rem 3rem 3rem;
+  align-items: stretch;
 }
-.left-bottom-buttonn {
-  position: absolute;       
-  top: 75%;              
-  left: 30px;
-  transform: translateY(-50%); 
-  padding: 120px 325px;    
+
+.builtin-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.builtin-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.builtin-btn {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  color: #23081a;
   background: linear-gradient(100deg, #2639d0, #84afe1);
+  border: none;
   border-radius: 100px;
+  cursor: pointer;
+  width: 100%;
+  transition: filter 0.2s;
+}
+
+.builtin-btn:hover {
+  filter: brightness(1.15);
+}
+
+.builtin-btn-large {
+  font-size: clamp(1.5rem, 3vw, 3rem);
+  height: 100%;
+  max-height: 400px;
+}
+
+.builtin-btn-small {
+  font-size: clamp(1rem, 2vw, 2rem);
+  padding: 3rem 2rem;
 }

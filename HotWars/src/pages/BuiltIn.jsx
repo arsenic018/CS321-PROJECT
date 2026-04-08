@@ -1,54 +1,31 @@
 import './BuiltIn.css';
-import './Play.jsx';
-import './CreateSet.jsx';
-import {User } from 'lucide-react';
-import { BrowserRouter as Router,
-  Routes,
-  Route,
-  Link,
-  useNavigate
- } from "react-router-dom"
+import { User } from 'lucide-react';
+import { useNavigate } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 const BuiltIn = () => {
-    return(
-        <div className="startPanelll">
-            <header className="startHeaderr">
-                <h1 className="gameTitlee">HOT WARS!</h1>
-                <User className="icon user-icon" size={36} color="#e0e0e0" />
-            </header>
-            <h1 className='builtInTitle'>Built in Sets</h1>
-            <PlayButton/>
-            <ValButton/>
-            <TriviaButton/>
-        </div>
-        
-    )
-}
-function PlayButton(){
     const nami = useNavigate();
-    //Need to add fucntionaltiy that when user selects a prebuilt set and then user can start the game
     return (
-        <div className="right-middle-buttonn">
-        <button className="button-titleee" onClick={()=>nami("/Play")}>Play</button>
-        </div>
-    )
-}
+        <div className="builtin-panel">
+            <header className="builtin-header">
+                <img src={logo} alt="Logo" className="logo-icon" />
+                <h1 className="builtin-title">HOT WARS!</h1>
+                <User className="icon user-icon" size={36} color="#e0e0e0" onClick={() => nami("/Login")} />
+            </header>
 
-function ValButton(){
-    //Need to add functionality that a user can select a built in valorant comms set 
-    const nami = useNavigate();
-    return (<div className="left-top-buttonn">
-        <button className="button-titleee">Valorant Comms</button>
-        </div>
-    )
-}
-function TriviaButton(){
-    //Need to add functionality that a user can select a built in trivia set 
-    const nami = useNavigate();
-    return (<div className="left-bottom-buttonn">
-        <button className="button-titleee">Trivia</button>
-        </div>
-    )
-}
+            <h2 className="builtin-subtitle">Built In Sets</h2>
 
-export default BuiltIn
+            <main className="builtin-main">
+                <div className="builtin-left">
+                    <button className="builtin-btn builtin-btn-small">Valorant Comms</button>
+                    <button className="builtin-btn builtin-btn-small">Trivia</button>
+                </div>
+                <div className="builtin-right">
+                    <button className="builtin-btn builtin-btn-large" onClick={() => nami("/Play")}>Play</button>
+                </div>
+            </main>
+        </div>
+    );
+};
+
+export default BuiltIn;
