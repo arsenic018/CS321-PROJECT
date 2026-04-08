@@ -1,8 +1,10 @@
 import { useEffect } from 'react';
 import { User } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import './LandingPanel.css';
 import logo from '../assets/logo.png'
 const LandingPanel = ({ onContinue }) => {
+    const nami = useNavigate();
     useEffect(() => {
         const handleKeyDown = (e) => {
             onContinue();
@@ -20,7 +22,7 @@ const LandingPanel = ({ onContinue }) => {
             <header className="landing-header">
                 <img src={logo} alt="Logo" className="logo-icon" />
                 <h1 className="game-title">HOT WARS!</h1>
-                <User className="icon user-icon" size={36} color="#e0e0e0" />
+                <User className="icon user-icon" size={36} color="#e0e0e0" onClick={(e) => { e.stopPropagation(); nami("/Login"); }} />
             </header>
 
             <main className="landing-main">

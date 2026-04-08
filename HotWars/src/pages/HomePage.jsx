@@ -11,11 +11,12 @@ import { BrowserRouter as Router,
  } from "react-router-dom"
 
 const HomePage = () => {
+    const nami = useNavigate();
     return(
         <div className="startPanelx">
             <header className="startHeaderr">
                 <h1 className="gameTitlee">HOT WARS!</h1>
-                <User className="icon user-icon" size={36} color="#e0e0e0" />
+                <User className="icon user-icon" size={36} color="#e0e0e0" onClick={() => nami("/Login")} />
             </header>
             <PlayButton/>
             <CreateButton/>
