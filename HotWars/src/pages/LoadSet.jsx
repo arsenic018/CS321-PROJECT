@@ -7,25 +7,33 @@ import { BrowserRouter as Router,
  } from "react-router-dom"
 import './LoadSet.css';
 const LoadSet = () => {
+    const navigate = useNavigate();
+
+    const handleLoadSet = () => {
+        // TODO: Finish making the UI look sexy. Don't worry about the files for now.
+    };
+
     return(
        <div className="startPanel">
             <header className="startHeader">
                 <h1 className="gameTitle">HOT WARS!</h1>
                 <h2 className="PageTitle"> This is the Load Set Screen</h2>
+                
             </header>
-            <LoadButton />
+            <LoadButton onClick={handleLoadSet} onPlay={() => navigate("/Play")} />
         </div>
         
     )
 }
 
-function LoadButton()
+function LoadButton({ onClick, onPlay })
 {
-    const nami = useNavigate();
-    return (<div className="load-set-button">
-        <button className="button-title"onClick={()=>nami("/LoadFile")}>Load A File</button>
-        </div>
-    )
+    return (
+        <>
+            <button className="load-set-button" onClick={onClick}>Load File</button>
+            <button className="load-play-button" onClick={onPlay}>Play</button>
+        </>
+    );
 }
 // function PlayButton(){
 //     return (
