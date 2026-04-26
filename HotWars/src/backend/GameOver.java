@@ -41,7 +41,9 @@ public class GameOver extends Game{
         return gameOver;
     }
 
-    
+    /**
+     * Setting the gameover if player either loses or wins.
+     */
     protected void setGameOver() {
         if (gameStatus == 0 || gameStatus == 1) {
             gameOver = 0;
