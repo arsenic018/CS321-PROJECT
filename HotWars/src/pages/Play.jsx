@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import heart from "../assets/heart.svg";
 import "./Play.css";
-import { Score } from "@material-ui/icons";
 
 const WORDS = [
     "react", "vite", "router", "state", "effect",
@@ -13,7 +12,6 @@ const TICK_MS = 50;
 const SPAWN_MS = 2000;
 
 let nextId = 0;
-let score = 0;
 
 const Play = () => {
     const [answer, setAnswer] = useState("");
@@ -64,7 +62,6 @@ const Play = () => {
             setWords(prev => prev.filter(w => w.id !== match.id));
             setScore(prev => prev + 1); // Increment score by one
             setAnswer("");
-            score += 10;
         } else {
             setAnswer(val);
         }
