@@ -1,47 +1,87 @@
-import React, { useState } from "react"
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import heart from '../assets/heart.svg';
-import './Play.css';
-const Play = () => {
-    const [answer, setAnswer] = useState(""); // This will hold user Answer
-    const [score, setScore] = useState(0); // This will hold user Score
-    const [health, setHealth] = useState(3); // Start with 3 hearts
-    // FUTURE: Add a way to get questions from the loaded set the user provides. 
-    // I'm not sure what the best way to do this is yet, but I know we need to do it.
+import { useState, useEffect } from "react";
+import heart from "../assets/heart.svg";
+import "./Play.css";
 
-    // Textbox handler
-    const handleAnswer = (event) => {
-        setAnswer(event.target.value); // Accesses the current text
+const WORDS = [
+    "react", "vite", "router", "state", "effect",
+    "render", "component", "props", "hook", "context"
+];
+
+const FALL_SPEED = 0.4;
+const TICK_MS = 50;
+const SPAWN_MS = 2000;
+
+let nextId = 0;
+
+const Play = () => {
+    const [answer, setAnswer] = useState("");
+    const [words, setWords] = useState([]);
+
+    useEffect(() => {
+        const spawn = setInterval(() => {
+            const word = WORDS[Math.floor(Math.random() * WORDS.length)];
+            const x = Math.random() * 75 + 5;
+            setWords(prev => [...prev, { id: nextId++, word, x, y: 0 }]);
+        }, SPAWN_MS);
+        return () => clearInterval(spawn);
+    }, []);
+
+    useEffect(() => {
+        const tick = setInterval(() => {
+            setWords(prev => prev.map(w => ({ ...w, y: w.y + FALL_SPEED })));
+        }, TICK_MS);
+        return () => clearInterval(tick);
+    }, []);
+
+    const handleInput = (e) => {
+        const val = e.target.value;
+        const match = words.find(w => w.word.toLowerCase() === val.toLowerCase().trim());
+        if (match) {
+            setWords(prev => prev.filter(w => w.id !== match.id));
+            setAnswer("");
+        } else {
+            setAnswer(val);
+        }
     };
-    // When we figure out how to retrieve the set of answers, we should add a handler
-    // that checks if the user's answer is correct.
 
     return (
-        <div className="startPanel">
-
-            <header className="startHeader">
-                <h1 className="gameTitle">HOT WARS!</h1>
+        <div className="play-panel">
+            <header className="play-header">
+                <div className="health-container">
+                    <img src={heart} className="heart" alt="Heart" />
+                    <img src={heart} className="heart" alt="Heart" />
+                    <img src={heart} className="heart" alt="Heart" />
+                </div>
+                <h1 className="play-title">HOT WARS!</h1>
+                <div className="score-container">
+                    <p className="score-text">Score: 0</p>
+                </div>
             </header>
-            <div className="healthContainer">
-                <img src={heart} className="heart" alt="Heart" />
-                <img src={heart} className="heart" alt="Heart" />
-                <img src={heart} className="heart" alt="Heart" />
+
+            <div className="play-field">
+                {words.map(w => (
+                    <span
+                        key={w.id}
+                        className="falling-word"
+                        style={{ left: `${w.x}%`, top: `${w.y}%` }}
+                    >
+                        {w.word}
+                    </span>
+                ))}
             </div>
-            <div className="scoreContainer">
-                <p className="scoreText"> Score: {score}</p>
+
+            <div className="play-input-bar">
+                <input
+                    className="play-input"
+                    type="text"
+                    value={answer}
+                    onChange={handleInput}
+                    placeholder="Type a word..."
+                    autoFocus
+                />
             </div>
-
-
-            <Box display="flex" justifyContent="center" alignItems="center" >
-                <TextField id="filled-basic" label="Enter Answer" variant="filled"
-                    sx={{ backgroundColor: "white" }} />
-            </Box>
-
-
-
         </div>
-    )
-}
+    );
+};
 
-export default Play
+export default Play;
