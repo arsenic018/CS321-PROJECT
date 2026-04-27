@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import heart from "../assets/heart.svg";
 import "./Play.css";
+import { Score } from "@material-ui/icons";
 
 const WORDS = [
     "react", "vite", "router", "state", "effect",
@@ -12,6 +13,7 @@ const TICK_MS = 50;
 const SPAWN_MS = 2000;
 
 let nextId = 0;
+let score = 0;
 
 const Play = () => {
     const [answer, setAnswer] = useState("");
@@ -39,6 +41,7 @@ const Play = () => {
         if (match) {
             setWords(prev => prev.filter(w => w.id !== match.id));
             setAnswer("");
+            score += 10;
         } else {
             setAnswer(val);
         }
@@ -54,7 +57,7 @@ const Play = () => {
                 </div>
                 <h1 className="play-title">HOT WARS!</h1>
                 <div className="score-container">
-                    <p className="score-text">Score: 0</p>
+                    <p className="score-text">Score: {score}</p>
                 </div>
             </header>
 
