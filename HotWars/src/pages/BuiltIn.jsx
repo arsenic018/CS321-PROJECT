@@ -1,10 +1,12 @@
 import './BuiltIn.css';
+import { useState } from "react";
 import { User } from 'lucide-react';
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 
 const BuiltIn = () => {
     const nami = useNavigate();
+    const [selectedSet, setSelectedSet] = useState("");
     return (
         <div className="builtin-panel">
             <header className="builtin-header">
@@ -17,11 +19,11 @@ const BuiltIn = () => {
 
             <main className="builtin-main">
                 <div className="builtin-left">
-                    <button className="builtin-btn builtin-btn-small">Valorant Comms</button>
-                    <button className="builtin-btn builtin-btn-small">Trivia</button>
+                    <button className="builtin-btn builtin-btn-small"onClick={() => setSelectedSet("valorant")}>Valorant Comms</button>
+                    <button className="builtin-btn builtin-btn-small"onClick={() => setSelectedSet("trivia")}>Trivia</button>
                 </div>
                 <div className="builtin-right">
-                    <button className="builtin-btn builtin-btn-large" onClick={() => nami("/Play")}>Play</button>
+                    <button className="builtin-btn builtin-btn-large" onClick={() => nami(`/Play/${selectedSet}`)}>Play</button>
                 </div>
             </main>
         </div>

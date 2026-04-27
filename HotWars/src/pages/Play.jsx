@@ -2,10 +2,7 @@ import { useState, useEffect } from "react";
 import heart from "../assets/heart.svg";
 import "./Play.css";
 
-const WORDS = [
-    "react", "vite", "router", "state", "effect",
-    "render", "component", "props", "hook", "context"
-];
+
 
 const FALL_SPEED = 0.4;
 const TICK_MS = 50;
@@ -16,15 +13,23 @@ let nextId = 0;
 const Play = () => {
     const [answer, setAnswer] = useState("");
     const [words, setWords] = useState([]);
+    const [questions, setQuestions] = useState([]);
+    useEffect(() => {
+        fetch("http://localhost:5000/trivia")
+            .then(res => res.json())
+            .then(data => setQuestions(data))
+            .catch(err => console.log(err));
+    }, []);
 
     useEffect(() => {
         const spawn = setInterval(() => {
-            const word = WORDS[Math.floor(Math.random() * WORDS.length)];
+            const q = questions[Math.floor(Math.random() * questions.length)];
+            // console.log("spawning question:", q);
             const x = Math.random() * 75 + 5;
-            setWords(prev => [...prev, { id: nextId++, word, x, y: 0 }]);
+            setWords(prev => [...prev, { id: nextId++, question: q.Question,answer: q.Answer, x, y: 10 }]);
         }, SPAWN_MS);
         return () => clearInterval(spawn);
-    }, []);
+    }, [questions]);
 
     useEffect(() => {
         const tick = setInterval(() => {
@@ -35,7 +40,7 @@ const Play = () => {
 
     const handleInput = (e) => {
         const val = e.target.value;
-        const match = words.find(w => w.word.toLowerCase() === val.toLowerCase().trim());
+        const match = words.find(w => w.answer.toLowerCase() === val.toLowerCase().trim());
         if (match) {
             setWords(prev => prev.filter(w => w.id !== match.id));
             setAnswer("");
@@ -65,7 +70,7 @@ const Play = () => {
                         className="falling-word"
                         style={{ left: `${w.x}%`, top: `${w.y}%` }}
                     >
-                        {w.word}
+                        {w.question}
                     </span>
                 ))}
             </div>
