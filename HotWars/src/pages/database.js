@@ -22,4 +22,4 @@ app.get("/valorant", async (req, res) => {
     res.json(data);
 });
 
-app.listen(5000);
+app.listen(3000);

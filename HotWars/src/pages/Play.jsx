@@ -18,7 +18,7 @@ const Play = () => {
     const droppedWords = useRef(new Set()); // Keep track of words that have been dropped
     const [questions, setQuestions] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/trivia")
+        fetch("http://localhost:3000/trivia")
             .then(res => res.json())
             .then(data => setQuestions(data))
             .catch(err => console.log(err));
@@ -29,7 +29,7 @@ const Play = () => {
             const q = questions[Math.floor(Math.random() * questions.length)];
             // console.log("spawning question:", q);
             const x = Math.random() * 75 + 5;
-            setWords(prev => [...prev, { id: nextId++, question: q.Question,answer: q.Answer, x, y: 10 }]);
+            setWords(prev => [...prev, { id: nextId++, question: q.Question,answer: q.Answer, x, y: 0 }]);
         }, SPAWN_MS);
         return () => clearInterval(spawn);
     }, [questions]);
