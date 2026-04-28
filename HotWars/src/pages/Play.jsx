@@ -9,7 +9,7 @@ import {
 
 
 
-const FALL_SPEED = 0.8;
+const FALL_SPEED = 0.4;
 const TICK_MS = 50;
 const SPAWN_MS = 2000;
 
