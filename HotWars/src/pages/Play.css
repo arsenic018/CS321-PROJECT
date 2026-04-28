@@ -94,3 +94,52 @@
 .play-input:focus {
   border-color: #84afe1;
 }
+
+.game-over {
+  font-family: 'Orbitron', sans-serif;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 50vh;
+  font-size: 5rem;
+  width: 100%;
+}
+
+.score-final {
+  font-family: 'Orbitron', sans-serif;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: -20vh
+}
+
+.play-again-button {
+  font-family: 'Orbitron', sans-serif;
+  flex: 0.45;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(100deg, #2639d0, #84afe1);
+  border-radius: 100px;
+  margin-right: auto;
+  margin-left: 2rem
+}
+
+.quit-button {
+  font-family: 'Orbitron', sans-serif;
+  flex: 0.45;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(100deg, #2639d0, #84afe1);
+  border-radius: 100px;
+  margin-left: auto;
+  margin-right: 2rem;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 25vh;
+}

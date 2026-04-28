@@ -70,6 +70,8 @@
   cursor: pointer;
 }
 .load-set-button {
+  font-family: 'Orbitron', sans-serif;
+
   position: sticky;       
   bottom: 50%;              
   display: flex;
@@ -87,6 +89,8 @@
   cursor: pointer;
 }
 .load-play-button {
+  font-family: 'Orbitron', sans-serif;
+
   position: sticky;
   bottom: 0%;
   left: 100%;

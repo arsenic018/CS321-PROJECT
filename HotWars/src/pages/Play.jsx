@@ -1,6 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import heart from "../assets/heart.svg";
 import "./Play.css";
+import { 
+    useNavigate,
+    useParams,
+    useSearchParams
+} from "react-router-dom"; 
 
 
 
@@ -14,15 +19,18 @@ const Play = () => {
     const [answer, setAnswer] = useState("");
     const [words, setWords] = useState([]);
     const [hearts, setHearts] = useState(3); // Start w/ 3 hearts, Decrement when word falls completely down
+    const [gameOver, setGameOver] = useState(false);
     const [score, setScore] = useState(0); // Start w/ 0 score, Increment when word is typed
     const droppedWords = useRef(new Set()); // Keep track of words that have been dropped
     const [questions, setQuestions] = useState([]);
+    const nami = useNavigate();
+    const { gamemode } = useParams();
     useEffect(() => {
         fetch("http://localhost:3000/trivia")
             .then(res => res.json())
             .then(data => setQuestions(data))
             .catch(err => console.log(err));
-    }, []);
+    }, [gamemode]);
 
     useEffect(() => {
         const spawn = setInterval(() => {
@@ -72,10 +80,22 @@ const Play = () => {
         }
     };
 
+    useEffect(() => {
+        if (hearts <= 0) {
+            setGameOver(true);
+        }
+    }, [hearts])
+
     if (hearts <= 0) { // Check if hearts are less than or equal to 0
         return ( // TEMPORARY GAME OVER SCREEN PLEASE MAKE IT BETTER
             <div className="play-panel">
-                <h1>GAME OVER</h1>
+                <h1 className="game-over">GAME OVER</h1>
+                <p className="score-final">Final score: {score}</p>
+                <div className="buttons-container">
+                    <button className="quit-button" onClick={() => nami("/HomePage")}>Quit</button>
+                    <button className="play-again-button" onClick={() => nami("/BuiltIn")}>Play again</button>
+                </div>
+                
             </div>
         );
     }
@@ -119,5 +139,7 @@ const Play = () => {
         </div>
     );
 };
+
+
 
 export default Play;
