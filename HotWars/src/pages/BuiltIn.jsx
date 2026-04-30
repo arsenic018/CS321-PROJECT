@@ -6,7 +6,7 @@ import logo from "../assets/logo.png";
 
 const BuiltIn = () => {
     const nami = useNavigate();
-    const [selectedSet, setSelectedSet] = useState("");
+    const [selectedSet, setSelectedSet] = useState("valorant");
     return (
         <div className="builtin-panel">
             <header className="builtin-header">
@@ -19,8 +19,8 @@ const BuiltIn = () => {
 
             <main className="builtin-main">
                 <div className="builtin-left">
-                    <button className="builtin-btn builtin-btn-small"onClick={() => setSelectedSet("valorant")}>Valorant Comms</button>
-                    <button className="builtin-btn builtin-btn-small"onClick={() => setSelectedSet("trivia")}>Trivia</button>
+                    <button className={`builtin-btn builtin-btn-small ${selectedSet === "valorant" ? "selected" : ""}`} onClick={() => setSelectedSet("valorant")}> Valorant Comms </button>
+                    <button className={`builtin-btn builtin-btn-small ${selectedSet === "trivia" ? "selected" : ""}`} onClick={() => setSelectedSet("trivia")}>Trivia</button>
                 </div>
                 <div className="builtin-right">
                     <button className="builtin-btn builtin-btn-large" onClick={() => nami(`/Play/${selectedSet}`)}>Play</button>

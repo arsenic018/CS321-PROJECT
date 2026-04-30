@@ -52,6 +52,13 @@
   margin: 0;
 }
 
+.falling-image {
+    width: 600px;
+    height: auto;
+    pointer-events: none;
+    user-select: none;
+}
+
 .play-field {
   position: relative;
   flex: 1;
@@ -118,6 +125,7 @@
 
 .play-again-button {
   font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
   flex: 0.45;
   display: flex;
   align-items: center;
@@ -130,6 +138,7 @@
 
 .quit-button {
   font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
   flex: 0.45;
   display: flex;
   align-items: center;
