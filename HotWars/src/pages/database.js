@@ -22,4 +22,5 @@ app.get("/valorant", async (req, res) => {
     res.json(data);
 });
 
-app.listen(3000);
+console.log("Connection Successful")
+app.listen(5000);

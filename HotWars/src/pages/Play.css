@@ -64,7 +64,10 @@
   font-weight: 700;
   color: #84afe1;
   text-shadow: 0 0 8px rgba(132, 175, 225, 0.8);
-  white-space: nowrap;
+
+  max-width: 350px;       /* prevents long questions from stretching horizontally */
+  text-align: center;
+  white-space: normal;
   user-select: none;
 }
 
